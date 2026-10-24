@@ -1,0 +1,48 @@
+
+#Modular Calculator Mini-Program
+
+# Display operation menu
+print("Select operation:")
+print("1. Addition")
+print("2. Subtraction")
+print("3. Multiplication")
+print("4. Division")
+
+# Get user inputs
+choice = input("Enter choice (1, 2, 3, or 4): ")
+a = float(input("Please enter your first desired number: "))
+b = float(input("Please enter your second desired number: "))
+
+# Define the operation functions
+def add_number(a, b):
+    return a + b
+
+def subtract_number(a, b):
+    return a - b
+
+def multiply_number(a, b):
+    return a * b
+
+def divide_number(a, b):
+    return a / b
+
+# Alias the functions (giving them new names)
+Addition = add_number
+Subtraction = subtract_number
+Multiplication = multiply_number
+Division = divide_number
+
+# Check the user's choice and perform ONLY the selected operation
+if choice == '1':
+    print("Result:", Addition(a, b))
+elif choice == '2':
+    print("Result:", Subtraction(a, b))
+elif choice == '3':
+    print("Result:", Multiplication(a, b))
+elif choice == '4':
+    if b != 0:
+        print("Result:", Division(a, b))
+    else:
+        print("Error: Cannot divide by zero")
+else:
+    print("Invalid Input! Please run the program again and select 1, 2, 3, or 4.")
